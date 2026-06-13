@@ -1,0 +1,11 @@
+services:
+  frontend-new:
+    image: mayxu111/234-deploylab-frontend:latest
+    pull_policy: always
+    ports:
+      - "8084:8080"
+    environment:
+      # 同样替换为你的服务器IP
+      - VITE_GRAPHQL_URI=http://100.29.7.182:8083/graphql
+      - VITE_SERVER_URI=http://100.29.7.182:8083
+    restart: unless-stopped
